@@ -20,6 +20,24 @@ body {
     padding: 25%;
 }
 
+.text-input
+{
+    position: fixed;
+    top: 70%;
+    max-width: 10%;
+    margin-left: 45%;
+    /* visibility: hidden; */
+}
+
+.correct {
+    color: green;
+}
+  
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
+
 @media all and (max-width:1400px) {
     .text {
         padding: 20%;
