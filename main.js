@@ -8,8 +8,13 @@ onload = dostuff => inputBox2.value=""
 
 var sfx_type = new Audio("res/type.ogg");
 var sfx_alert = new Audio("res/cry.ogg");
+var sfx_victory = new Audio("res/yay.ogg");
 var converter = new showdown.Converter();
 var str = `# Terms of service
+
+## 1\. Terms`;
+
+var str2 = `# Terms of service
 
 ## 1\. Terms
 
@@ -73,4 +78,8 @@ function textchanged() {
     alert("Please read the TOS carefully!")
   }
   inputBox2.value=""
+  if (chkstr == ""){
+    sfx_victory.play()
+    alert("Congratulations, you have now agreed to our TOS! :)")
+  }
 }
