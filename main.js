@@ -6,6 +6,8 @@ const inputBox = document.getElementById('inputBox')
 
 onload = dostuff => inputBox2.value=""
 
+var sfx_type = new Audio("res/type.ogg");
+var sfx_alert = new Audio("res/cry.ogg");
 var converter = new showdown.Converter();
 var str = `# Terms of service
 
@@ -60,13 +62,14 @@ var chkstr = str.replace(/# |## |\\/gm,"");
 displayText.innerHTML = html;
 
 function textchanged() {
-  var html = converter.makeHtml(str.slice(chkstrnum));
   chkstrnum = inputBox2.value.length
   if (inputBox2.value.charAt(inputBox2.value.length - 1) === chkstr.charAt(0)) {
     correct.innerHTML = correct.innerHTML + chkstr.charAt(0);
     chkstr = chkstr.substring(1);
     displayText.innerHTML = chkstr;
+    sfx_type.play()
   } else {
+    sfx_alert.play()
     alert("Please read the TOS carefully!")
   }
   inputBox2.value=""
