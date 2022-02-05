@@ -12,10 +12,6 @@ var sfx_victory = new Audio("res/yay.ogg");
 var converter = new showdown.Converter();
 var str = `# Terms of service
 
-## 1\. Terms`;
-
-var str2 = `# Terms of service
-
 ## 1\. Terms
 
 By accessing this Website, accessible from var.websiteurl, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.
@@ -34,7 +30,7 @@ This will let var.companyname to terminate upon violations of any of these restr
 
 ## 3\. Disclaimer
 
-All the materials on var.companyname’s Website are provided "as is". var.companyname makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, var.companyname does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website.
+All the materials on var.companyname’s Website are provided "as is". var.companyname makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, var.companyname does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website. If you agree to this TOS, we will reward you with a youtube video.
 
 ## 4\. Limitations
 
@@ -42,7 +38,7 @@ var.companyname or its suppliers will not be hold accountable for any damages th
 
 ## 5\. Revisions and Errata
 
-The materials appearing on var.companyname’s Website may include technical, typographical, or photographic errors. var.companyname will not promise that any of the materials in this Website are accurate, complete, or current. var.companyname may change the materials contained on its Website at any time without notice. var.companyname does not make any commitment to update the materials.
+The materials appearing on var.companyname’s Website may include technical, typographical, or photographic errors. var.companyname will not promise that any of the materials in this Website are accurate, complete, or current. var.companyname may change the materials contained on its Website at any time without notice. var.companyname does not make any commitment to update the materials. Wanna hear a joke? What did one traffic light say to the other? "Stop looking!, I'm changing!"
 
 ## 6\. Links
 
@@ -75,11 +71,14 @@ function textchanged() {
     sfx_type.play()
   } else {
     sfx_alert.play()
-    alert("Please read the TOS carefully!")
+    alert(` Please read the TOS carefully!
+  
+  hint: The terms are case sensitive`)
   }
   inputBox2.value=""
   if (chkstr == ""){
     sfx_victory.play()
     alert("Congratulations, you have now agreed to our TOS! :)")
+    window.location.href = "https://youtu.be/pPd67CEL54E";
   }
 }
