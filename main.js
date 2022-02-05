@@ -7,9 +7,10 @@ const inputBox = document.getElementById('inputBox')
 // TODO redo chkstr with new markdown based str including spaces
 // (currently using html based chkstr)
 
+onload = dostuff => inputBox2.value=""
+
 var converter = new showdown.Converter();
-var str = `
-# Terms of service
+var str = `# Terms of service
 
 ## 1\. Terms
 
@@ -55,32 +56,30 @@ Please read our Privacy Policy.
 
 Any claim related to var.companyname's Website shall be governed by the laws of in without regards to its conflict of law provisions.
 `;
-// var chars = str.split("");
-// var result = '';
-// for(var i = 0; i < chars.length; i++){
-// 	if(i % 2 ==0){
-// 		result += '<span class="correct">'+str[i]+'</span>';
-// 	} else {
-// 		result += '<span class="incorrect">'+str[i]+'</span>';
-// 	}
-// }
+
 var html = converter.makeHtml(str);
-var chkstr = "Termsofservice1.TermsByaccessingthisWebsite,accessiblefromvar.websiteurl,youareagreeingtobeboundbytheseWebsiteTermsandConditionsofUseandagreethatyouareresponsiblefortheagreementwithanyapplicablelocallaws.Ifyoudisagreewithanyoftheseterms,youareprohibitedfromaccessingthissite.ThematerialscontainedinthisWebsiteareprotectedbycopyrightandtrademarklaw.2.UseLicensePermissionisgrantedtotemporarilydownloadonecopyofthematerialsonvar.companyname\'sWebsiteforpersonal,non-commercialtransitoryviewingonly.Thisisthegrantofalicense,notatransferoftitle,andunderthislicenseyoumaynot:modifyorcopythematerials;usethematerialsforanycommercialpurposeorforanypublicdisplay;attempttoreverseengineeranysoftwarecontainedonvar.companyname\'sWebsite;removeanycopyrightorotherproprietarynotationsfromthematerials;ortransferringthematerialstoanotherpersonor\"mirror\"thematerialsonanyotherserver.Thiswillletvar.companynametoterminateuponviolationsofanyoftheserestrictions.Upontermination,yourviewingrightwillalsobeterminatedandyoushoulddestroyanydownloadedmaterialsinyourpossessionwhetheritisprintedorelectronicformat.3.DisclaimerAllthematerialsonvar.companyname’sWebsiteareprovided\"asis\".var.companynamemakesnowarranties,mayitbeexpressedorimplied,thereforenegatesallotherwarranties.Furthermore,var.companynamedoesnotmakeanyrepresentationsconcerningtheaccuracyorreliabilityoftheuseofthematerialsonitsWebsiteorotherwiserelatingtosuchmaterialsoranysiteslinkedtothisWebsite.4.Limitationsvar.companynameoritssupplierswillnotbeholdaccountableforanydamagesthatwillarisewiththeuseorinabilitytousethematerialsonvar.companyname’sWebsite,evenifvar.companynameoranauthorizerepresentativeofthisWebsitehasbeennotified,orallyorwritten,ofthepossibilityofsuchdamage.Somejurisdictiondoesnotallowlimitationsonimpliedwarrantiesorlimitationsofliabilityforincidentaldamages,theselimitationsmaynotapplytoyou.5.RevisionsandErrataThematerialsappearingonvar.companyname’sWebsitemayincludetechnical,typographical,orphotographicerrors.var.companynamewillnotpromisethatanyofthematerialsinthisWebsiteareaccurate,complete,orcurrent.var.companynamemaychangethematerialscontainedonitsWebsiteatanytimewithoutnotice.var.companynamedoesnotmakeanycommitmenttoupdatethematerials.6.Linksvar.companynamehasnotreviewedallofthesiteslinkedtoitsWebsiteandisnotresponsibleforthecontentsofanysuchlinkedsite.Thepresenceofanylinkdoesnotimplyendorsementbyvar.companynameofthesite.Theuseofanylinkedwebsiteisattheuser’sownrisk.7.SiteTermsofUseModificationsvar.companynamemayrevisetheseTermsofUseforitsWebsiteatanytimewithoutpriornotice.ByusingthisWebsite,youareagreeingtobeboundbythecurrentversionoftheseTermsandConditionsofUse.8.YourPrivacyPleasereadourPrivacyPolicy.9.GoverningLawAnyclaimrelatedtovar.companyname\'sWebsiteshallbegovernedbythelawsofinwithoutregardstoitsconflictoflawprovisions"
+var chkstrbak = "Termsofservice1.TermsByaccessingthisWebsite,accessiblefromvar.websiteurl,youareagreeingtobeboundbytheseWebsiteTermsandConditionsofUseandagreethatyouareresponsiblefortheagreementwithanyapplicablelocallaws.Ifyoudisagreewithanyoftheseterms,youareprohibitedfromaccessingthissite.ThematerialscontainedinthisWebsiteareprotectedbycopyrightandtrademarklaw.2.UseLicensePermissionisgrantedtotemporarilydownloadonecopyofthematerialsonvar.companyname\'sWebsiteforpersonal,non-commercialtransitoryviewingonly.Thisisthegrantofalicense,notatransferoftitle,andunderthislicenseyoumaynot:modifyorcopythematerials;usethematerialsforanycommercialpurposeorforanypublicdisplay;attempttoreverseengineeranysoftwarecontainedonvar.companyname\'sWebsite;removeanycopyrightorotherproprietarynotationsfromthematerials;ortransferringthematerialstoanotherpersonor\"mirror\"thematerialsonanyotherserver.Thiswillletvar.companynametoterminateuponviolationsofanyoftheserestrictions.Upontermination,yourviewingrightwillalsobeterminatedandyoushoulddestroyanydownloadedmaterialsinyourpossessionwhetheritisprintedorelectronicformat.3.DisclaimerAllthematerialsonvar.companyname’sWebsiteareprovided\"asis\".var.companynamemakesnowarranties,mayitbeexpressedorimplied,thereforenegatesallotherwarranties.Furthermore,var.companynamedoesnotmakeanyrepresentationsconcerningtheaccuracyorreliabilityoftheuseofthematerialsonitsWebsiteorotherwiserelatingtosuchmaterialsoranysiteslinkedtothisWebsite.4.Limitationsvar.companynameoritssupplierswillnotbeholdaccountableforanydamagesthatwillarisewiththeuseorinabilitytousethematerialsonvar.companyname’sWebsite,evenifvar.companynameoranauthorizerepresentativeofthisWebsitehasbeennotified,orallyorwritten,ofthepossibilityofsuchdamage.Somejurisdictiondoesnotallowlimitationsonimpliedwarrantiesorlimitationsofliabilityforincidentaldamages,theselimitationsmaynotapplytoyou.5.RevisionsandErrataThematerialsappearingonvar.companyname’sWebsitemayincludetechnical,typographical,orphotographicerrors.var.companynamewillnotpromisethatanyofthematerialsinthisWebsiteareaccurate,complete,orcurrent.var.companynamemaychangethematerialscontainedonitsWebsiteatanytimewithoutnotice.var.companynamedoesnotmakeanycommitmenttoupdatethematerials.6.Linksvar.companynamehasnotreviewedallofthesiteslinkedtoitsWebsiteandisnotresponsibleforthecontentsofanysuchlinkedsite.Thepresenceofanylinkdoesnotimplyendorsementbyvar.companynameofthesite.Theuseofanylinkedwebsiteisattheuser’sownrisk.7.SiteTermsofUseModificationsvar.companynamemayrevisetheseTermsofUseforitsWebsiteatanytimewithoutpriornotice.ByusingthisWebsite,youareagreeingtobeboundbythecurrentversionoftheseTermsandConditionsofUse.8.YourPrivacyPleasereadourPrivacyPolicy.9.GoverningLawAnyclaimrelatedtovar.companyname\'sWebsiteshallbegovernedbythelawsofinwithoutregardstoitsconflictoflawprovisions"
 var chkstrnum = 1
+var chkstr = str.replace(/# |## |\\|\*   /gm,"");
+// console.log(chkstr)
+displayText.innerHTML = html;
 
 function textchanged() {
   var html = converter.makeHtml(str.slice(chkstrnum));
-  console.log(inputBox2.value)
-  console.log(chkstr.slice(0,chkstrnum))
-  if (inputBox2.value === chkstr.slice(0,chkstrnum+1)) {
-  // if (2>1) {
-    console.log("hehe")
-    displayText.innerHTML = html
-  }
   chkstrnum = inputBox2.value.length
+  console.log("ib: " + inputBox2.value.charAt(inputBox2.value.length - 1))
+  console.log("dp: " + chkstr.charAt(0))
+  console.log("no: " + chkstrnum)
+  if (inputBox2.value.charAt(inputBox2.value.length - 1) === chkstr.charAt(0)) {
+  // if (2>1) {
+    // chkstrnum = chkstrnum + 1;
+    chkstr = chkstr.substring(1);
+    displayText.innerHTML = chkstr;
+    // displayText.innerHTML = html
+  }
   console.log(chkstrnum)
   // displayText.innerHTML = inputBox2.value;
   // displayText.innerHTML = str.slice(chkstrnum);
 }
 
-displayText.innerHTML = html;
+// displayText.innerHTML = html;
