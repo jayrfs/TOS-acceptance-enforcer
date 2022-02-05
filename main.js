@@ -1,11 +1,8 @@
-// var outputText = document.getElementById('displayText');
+const correct = document.getElementById('correct');
 const displayText = document.getElementById('displayText');
 const inputBox2 = document.getElementById('inputBox')
 const inputBox = document.getElementById('inputBox')
   .addEventListener("input", (event) => textchanged());
-
-// TODO redo chkstr with new markdown based str including spaces
-// (currently using html based chkstr)
 
 onload = dostuff => inputBox2.value=""
 
@@ -58,28 +55,19 @@ Any claim related to var.companyname's Website shall be governed by the laws of 
 `;
 
 var html = converter.makeHtml(str);
-var chkstrbak = "Termsofservice1.TermsByaccessingthisWebsite,accessiblefromvar.websiteurl,youareagreeingtobeboundbytheseWebsiteTermsandConditionsofUseandagreethatyouareresponsiblefortheagreementwithanyapplicablelocallaws.Ifyoudisagreewithanyoftheseterms,youareprohibitedfromaccessingthissite.ThematerialscontainedinthisWebsiteareprotectedbycopyrightandtrademarklaw.2.UseLicensePermissionisgrantedtotemporarilydownloadonecopyofthematerialsonvar.companyname\'sWebsiteforpersonal,non-commercialtransitoryviewingonly.Thisisthegrantofalicense,notatransferoftitle,andunderthislicenseyoumaynot:modifyorcopythematerials;usethematerialsforanycommercialpurposeorforanypublicdisplay;attempttoreverseengineeranysoftwarecontainedonvar.companyname\'sWebsite;removeanycopyrightorotherproprietarynotationsfromthematerials;ortransferringthematerialstoanotherpersonor\"mirror\"thematerialsonanyotherserver.Thiswillletvar.companynametoterminateuponviolationsofanyoftheserestrictions.Upontermination,yourviewingrightwillalsobeterminatedandyoushoulddestroyanydownloadedmaterialsinyourpossessionwhetheritisprintedorelectronicformat.3.DisclaimerAllthematerialsonvar.companyname’sWebsiteareprovided\"asis\".var.companynamemakesnowarranties,mayitbeexpressedorimplied,thereforenegatesallotherwarranties.Furthermore,var.companynamedoesnotmakeanyrepresentationsconcerningtheaccuracyorreliabilityoftheuseofthematerialsonitsWebsiteorotherwiserelatingtosuchmaterialsoranysiteslinkedtothisWebsite.4.Limitationsvar.companynameoritssupplierswillnotbeholdaccountableforanydamagesthatwillarisewiththeuseorinabilitytousethematerialsonvar.companyname’sWebsite,evenifvar.companynameoranauthorizerepresentativeofthisWebsitehasbeennotified,orallyorwritten,ofthepossibilityofsuchdamage.Somejurisdictiondoesnotallowlimitationsonimpliedwarrantiesorlimitationsofliabilityforincidentaldamages,theselimitationsmaynotapplytoyou.5.RevisionsandErrataThematerialsappearingonvar.companyname’sWebsitemayincludetechnical,typographical,orphotographicerrors.var.companynamewillnotpromisethatanyofthematerialsinthisWebsiteareaccurate,complete,orcurrent.var.companynamemaychangethematerialscontainedonitsWebsiteatanytimewithoutnotice.var.companynamedoesnotmakeanycommitmenttoupdatethematerials.6.Linksvar.companynamehasnotreviewedallofthesiteslinkedtoitsWebsiteandisnotresponsibleforthecontentsofanysuchlinkedsite.Thepresenceofanylinkdoesnotimplyendorsementbyvar.companynameofthesite.Theuseofanylinkedwebsiteisattheuser’sownrisk.7.SiteTermsofUseModificationsvar.companynamemayrevisetheseTermsofUseforitsWebsiteatanytimewithoutpriornotice.ByusingthisWebsite,youareagreeingtobeboundbythecurrentversionoftheseTermsandConditionsofUse.8.YourPrivacyPleasereadourPrivacyPolicy.9.GoverningLawAnyclaimrelatedtovar.companyname\'sWebsiteshallbegovernedbythelawsofinwithoutregardstoitsconflictoflawprovisions"
 var chkstrnum = 1
-var chkstr = str.replace(/# |## |\\|\*   /gm,"");
-// console.log(chkstr)
+var chkstr = str.replace(/# |## |\\/gm,"");
 displayText.innerHTML = html;
 
 function textchanged() {
   var html = converter.makeHtml(str.slice(chkstrnum));
   chkstrnum = inputBox2.value.length
-  console.log("ib: " + inputBox2.value.charAt(inputBox2.value.length - 1))
-  console.log("dp: " + chkstr.charAt(0))
-  console.log("no: " + chkstrnum)
   if (inputBox2.value.charAt(inputBox2.value.length - 1) === chkstr.charAt(0)) {
-  // if (2>1) {
-    // chkstrnum = chkstrnum + 1;
+    correct.innerHTML = correct.innerHTML + chkstr.charAt(0);
     chkstr = chkstr.substring(1);
     displayText.innerHTML = chkstr;
-    // displayText.innerHTML = html
+  } else {
+    alert("Please read the TOS carefully!")
   }
-  console.log(chkstrnum)
-  // displayText.innerHTML = inputBox2.value;
-  // displayText.innerHTML = str.slice(chkstrnum);
+  inputBox2.value=""
 }
-
-// displayText.innerHTML = html;
